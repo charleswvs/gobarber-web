@@ -15,7 +15,6 @@ export function* signIn({ payload }) {
     });
 
     const { token, user } = response.data;
-    console.tron.log(user);
     if (!user.provider) {
       toast.error('User is not a provider');
       return;
