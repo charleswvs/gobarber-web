@@ -13,7 +13,7 @@ export function* signIn({ payload }) {
   });
 
   const { token, user } = response.data;
-
+  console.tron.log(user);
   if (!user.provider) {
     console.tron.error('User is not a provider');
     return;
