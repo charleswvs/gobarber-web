@@ -7,6 +7,7 @@ import { updateProfileRequest } from '~/store/modules/user/actions';
 import AvatarInput from './AvatarInput';
 
 import { Container } from './styles';
+import { signOut } from '~/store/modules/auth/actions';
 
 export default function Profile() {
   const dispatch = useDispatch();
@@ -14,6 +15,10 @@ export default function Profile() {
 
   function handleSubmit(data) {
     dispatch(updateProfileRequest(data));
+  }
+
+  function handleExit() {
+    dispatch(signOut());
   }
   return (
     <Container>
@@ -37,7 +42,9 @@ export default function Profile() {
         <button type="submit">Update Profile</button>
       </Form>
 
-      <button type="button">Exit GoBarber</button>
+      <button type="button" onClick={handleExit}>
+        Exit GoBarber
+      </button>
     </Container>
   );
 }

@@ -10,8 +10,6 @@ export default function AvatarInput() {
   const [file, setFile] = useState(defaultValue && defaultValue.id);
   const [preview, setPreview] = useState(defaultValue && defaultValue.url);
 
-  console.tron.log(useState(defaultValue));
-
   const ref = useRef();
 
   useEffect(() => {
