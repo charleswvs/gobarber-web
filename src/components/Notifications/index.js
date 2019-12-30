@@ -68,7 +68,7 @@ export default function Notifications() {
           {notifications.map(notification => (
             <Notification key={notification._id} unread={!notification.read}>
               <p>{notification.content}</p>
-              <time>2 days ago</time>
+              <time>{notification.timeDistance}</time>
               {!notification.read && (
                 <button
                   type="button"
